@@ -113,6 +113,24 @@
     transition: transform .15s ease;
   }
   .hero-cta:hover{ transform: translateY(-2px); }
+
+  /* shine sweep on CTA buttons */
+  .hero-cta, .offer-cta, .sticky-cta a{ position:relative; overflow:hidden; }
+  .hero-cta::after, .offer-cta::after, .sticky-cta a::after{
+    content:""; position:absolute; top:0; left:-75%; width:45%; height:100%;
+    background:linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.65) 50%, transparent 100%);
+    transform:skewX(-20deg); animation:btn-shine 3.2s ease-in-out infinite; pointer-events:none;
+  }
+  .offer-cta::after{ animation-delay:.3s; }
+  .sticky-cta a::after{ animation-delay:.6s; }
+  @keyframes btn-shine{
+    0%{ left:-75%; }
+    35%{ left:125%; }
+    100%{ left:125%; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-cta::after, .offer-cta::after, .sticky-cta a::after{ animation:none; display:none; }
+  }
   .hero-fine{ margin-top:14px; font-size:12px; color:var(--text-faint); }
 
   .trust-row{
