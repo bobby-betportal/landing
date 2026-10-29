@@ -241,6 +241,10 @@
   .section-head h2{ font-size: clamp(24px,4vw,32px); font-weight:800; letter-spacing:-0.5px; margin-bottom:10px;}
   .section-head p{ color:var(--text-dim); font-size:14.5px; line-height:1.6; }
 
+  .video-arrow{ display:flex; justify-content:center; margin:0 0 14px; }
+  .video-arrow svg{ width:30px; height:30px; animation:arrow-bounce 1.6s ease-in-out infinite; }
+  @keyframes arrow-bounce{ 0%,100%{ transform:translateY(0); opacity:.55; } 50%{ transform:translateY(9px); opacity:1; } }
+
   .video-frame{
     position:relative; border-radius:21px; padding:2px; max-width:340px; margin:0 auto 42px;
     background: conic-gradient(from var(--angle), transparent 0deg, transparent 230deg, var(--green) 290deg, #d9ffe6 310deg, var(--green) 330deg, transparent 360deg);
@@ -456,8 +460,11 @@
     <div class="wrap">
       <div class="section-head">
         <span class="tag">How it works</span>
-        <h2>Claim your free bet in 6 steps</h2>
-        <p>Follow these steps in order: the offer doesn't trigger automatically, you need to activate it before depositing.</p>
+        <h2>Follow these 6 steps 👇</h2>
+      </div>
+
+      <div class="video-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="4" x2="12" y2="18"></line><polyline points="5 13 12 20 19 13"></polyline></svg>
       </div>
 
       <div class="video-frame">
