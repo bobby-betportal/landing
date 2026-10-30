@@ -39,6 +39,24 @@
   button{ font-family:inherit; cursor:pointer; border:none; }
   .wrap{ max-width: 1120px; margin:0 auto; padding:0 20px; }
 
+  /* ===== page switch ===== */
+  .page-switch{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:center; gap:8px;
+    padding:12px 16px; background:rgba(7,8,10,0.88); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .page-switch a{
+    display:flex; align-items:center; gap:7px;
+    padding:9px 20px; border-radius:100px; font-weight:700; font-size:13.5px;
+    color:var(--text-dim); border:1px solid var(--border); transition:.15s;
+  }
+  .page-switch a:hover{ color:var(--text); border-color:rgba(47,230,115,0.4); }
+  .page-switch a.active{
+    background:var(--green); color:#06130a; border-color:var(--green);
+  }
+  @media (max-width:420px){ .page-switch a{ padding:9px 15px; font-size:12.5px; } }
+
   /* background glow */
   .bg-glow{
     position fixed; position:fixed; inset:0; z-index:-1; pointer-events:none;
@@ -398,6 +416,10 @@
 </div>
 
 <main>
+  <nav class="page-switch">
+    <a href="index.html" class="active">🏆 Paris Sportifs</a>
+    <a href="casino/index.html">🎰 Casino</a>
+  </nav>
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
